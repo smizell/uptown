@@ -13,7 +13,7 @@ extendify(A);
 // Extend A with extendify
 const B = A.extend({
   constructor: function() {
-    A.call(this); // Equivalent to super
+    this.__super(); // Equivalent to super
     this._x = 2;
   }
 }, {
