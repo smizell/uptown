@@ -109,12 +109,12 @@ describe('Extend', function() {
 
         // Foo exists on parent class
         foo: function(value) {
-          this.__super('foo', value);
+          this.__superMethod('foo', value);
         },
 
         // Bar does not exist on parent class
         bar: function() {
-          this.__super('bar');
+          this.__superMethod('bar');
         }
       });
 

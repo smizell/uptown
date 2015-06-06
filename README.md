@@ -43,7 +43,7 @@ var SubClass = Original.extend({
 
   hello: function(value) {
     // Add exclamation point
-    return this.__super('hello', value + '!');
+    return this.__superMethod('hello', value + '!');
   }
 }, {
   // Specify static methods and properties
