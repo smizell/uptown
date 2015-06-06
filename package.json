@@ -1,0 +1,26 @@
+{
+  "name": "uptown",
+  "version": "0.1.0",
+  "description": "Simple ways to extend prototypes",
+  "main": "lib/uptown.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "keywords": [
+    "ES6",
+    "class",
+    "extend",
+    "getters",
+    "setters",
+    "inherit"
+  ],
+  "author": "Stephen Mizell",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "lodash": "^3.9.3"
+  }
+}
