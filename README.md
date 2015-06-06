@@ -56,3 +56,15 @@ var SubClass = Original.extend({
   }
 });
 ```
+
+New classes may also be created using the `createClass` function. The `createClass` function works just like `.extend`.
+
+```js
+var createClass = require('uptown').createClass;
+
+var Foo = createClass({
+  constructor: function() {
+    this.foo = 'bar';
+  }
+});
+```
