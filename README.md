@@ -1,6 +1,6 @@
 # Uptown
 
-Simplify prototypical inheritance.
+Simplify prototypical inheritance. Also tries to provide features for classes that you'd get with ES6 classes.
 
 ## Install
 
