@@ -1,6 +1,11 @@
 # Uptown
 
-Simplify prototypical inheritance. Also tries to provide features for classes that you'd get with ES6 classes.
+Simplify prototypical inheritance. This tries to provide some simple constructs for providing functionality you get with ES6 classes, such as:
+
+* Static class methods
+* Getter and setter methods
+* Super for constructor
+* Super for instance methods
 
 ## Install
 
@@ -8,7 +13,7 @@ Simplify prototypical inheritance. Also tries to provide features for classes th
 npm install uptown --save
 ```
 
-### Usage
+## Usage
 
 Use `extendify` to add the extend method to a class (**note**: it mutates the original class).
 
@@ -22,11 +27,24 @@ The `extend` class method takes three options arguments:
 var extendify = require('uptown').extendify;
 
 var Original = function() {};
+
+Original.prototype.hello = function(value) {
+  return 'Hello, ' + value;
+}
+
 extendify(Original);
 
 var SubClass = Original.extend({
   // Specify a constructor for the new class
-  constructor: function() {}
+  constructor: function() {
+    // Call super constructor
+    this.__super();
+  },
+
+  hello: function(value) {
+    // Add exclamation point
+    return this.__super('hello', value + '!');
+  }
 }, {
   // Specify static methods and properties
   staticMethod: function() {}
