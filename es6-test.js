@@ -4,13 +4,16 @@ import { extendify } from './lib/uptown';
 // Create A using functions and prototypes
 const A = function() {
   this._x = 1;
+  this.y = 1;
 };
 A.prototype.foo = function() { return 'bar'; }
+A.prototype.hello = function() { return 'world'; }
 extendify(A);
 
 // Extend A with extendify
 const B = A.extend({
   constructor: function() {
+    A.call(this); // Equivalent to super
     this._x = 2;
   }
 }, {
@@ -36,6 +39,10 @@ class D extends C {
 
   foo() {
     return 'baz';
+  }
+
+  hello() {
+    return super.hello();
   }
 }
 
@@ -66,6 +73,8 @@ expect(c).to.be.instanceOf(C);
 
 // D instance assertions
 expect(d.foo()).to.equal('baz');
+expect(d.y).to.equal(1); // Test super on constructor
+expect(d.hello()).to.equal('world'); // Test super for methods
 expect(d.x).to.equal(4);
 expect(d).to.be.instanceOf(A);
 expect(d).to.be.instanceOf(B);
