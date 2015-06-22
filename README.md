@@ -2,10 +2,9 @@
 
 Simplify prototypical inheritance. This tries to provide some simple constructs for providing functionality you get with ES6 classes, such as:
 
+* Constructor functions
 * Static class methods
 * Getter and setter methods
-* Super for constructor
-* Super for instance methods
 
 ## Install
 
@@ -37,13 +36,13 @@ extendify(Original);
 var SubClass = Original.extend({
   // Specify a constructor for the new class
   constructor: function() {
-    // Call super constructor
-    this.__super();
+    // Call parent constructor
+    Original.apply(this, arguments);
   },
 
   hello: function(value) {
     // Add exclamation point
-    return this.__superMethod('hello', value + '!');
+    return Original.prototype.hello.call(this, value + '!')
   }
 }, {
   // Specify static methods and properties

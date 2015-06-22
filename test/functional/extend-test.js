@@ -74,64 +74,20 @@ describe('Extend', function() {
   });
 
   context('when a constructor is provided', function() {
-    var Original = function() {
-      // For use when testing super calls
-      this.y = true;
-      this.fooCalled = false;
-    }
-
-    // Used on child method call when this is called via super
-    Original.prototype.foo = function(value) {
-      this.fooCalled = value;
-    }
+    var Original = function() {}
 
     Original.extend = extend;
 
     var Sub = Original.extend({
       constructor: function() {
-        this.foo = 'bar';
+        this.a = 1;
       }
     });
 
     var subInstance = new Sub();
 
     it('calls the constructor', function() {
-      expect(subInstance.foo).to.equal('bar');
-    });
-
-    context('when using super', function() {
-      var Sub = Original.extend({
-        // Testing calling super constructor
-        // Parent constructor defines y and sets fooCalled for method tests
-        constructor: function() {
-          this.__super();
-        },
-
-        // Foo exists on parent class
-        foo: function(value) {
-          this.__superMethod('foo', value);
-        },
-
-        // Bar does not exist on parent class
-        bar: function() {
-          this.__superMethod('bar');
-        }
-      });
-
-      var subInstance = new Sub();
-
-      it('should have called the constructor of the parent', function() {
-        expect(subInstance.y).to.be.true;
-      });
-
-      it('calls super for a method', function() {
-        subInstance.foo(true);
-        expect(subInstance.fooCalled).to.be.true;
-      });
-
-      it('throws an error when a super method does not exist', function() {
-        expect(subInstance.bar).to.throw(Error);
-      });
+      expect(subInstance.a).to.equal(1);
     });
   });
 });
