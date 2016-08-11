@@ -22,7 +22,7 @@
     "mocha": "^2.2.5"
   },
   "dependencies": {
-    "lodash": "^3.9.3"
+    "lodash": "^4.14.2"
   },
   "repository": {
     "type": "git",
