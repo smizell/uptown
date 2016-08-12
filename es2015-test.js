@@ -1,5 +1,10 @@
-import { expect } from 'chai';
-import { extendify } from './lib/uptown';
+// This file exists to ensure that this functionality works with ES2015 classes.
+// The purpose is to ensure that this library works like ES2015 classes work. At
+// some point, this will not be needed as this functionality will be available
+// in all supported versions of Node. Until this, we will run this separately.
+
+var expect = require('chai').expect;
+var extendify = require('./lib/uptown').extendify;
 
 // Create A using functions and prototypes
 const A = function() {
@@ -27,10 +32,10 @@ const B = A.extend({
   }
 });
 
-// ES6 extending class B (created by uptown.extend)
+// ES2015 extending class B (created by uptown.extend)
 class C extends B {}
 
-// ES6 extending an ES6 class
+// ES2015 extending an ES2015 class
 class D extends C {
   constructor() {
     super();
@@ -81,4 +86,5 @@ expect(d).to.be.instanceOf(B);
 expect(d).to.be.instanceOf(C);
 expect(d).to.be.instanceOf(D);
 
+console.log('ES2015 tests pass');
 process.exit()

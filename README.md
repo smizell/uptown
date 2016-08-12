@@ -1,5 +1,7 @@
 # Uptown
 
+[![Build Status](https://travis-ci.org/smizell/uptown.svg?branch=master)](https://travis-ci.org/smizell/uptown)
+
 Simplify prototypical inheritance. This tries to provide some simple constructs for providing functionality you get with ES6 classes, such as:
 
 * Constructor functions
