@@ -1,6 +1,6 @@
 {
   "name": "uptown",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Simple ways to extend prototypes",
   "main": "lib/uptown.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "mocha": "^2.2.5"
   },
   "dependencies": {
-    "lodash": "^3.9.3"
+    "lodash": "^4.14.2"
   },
   "repository": {
     "type": "git",
