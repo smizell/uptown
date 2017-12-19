@@ -4,6 +4,8 @@
   "description": "Simple ways to extend prototypes",
   "main": "lib/uptown.js",
   "scripts": {
+    "prepare": "npm run build",
+    "build": "browserify -d -s uptown -x lodash -o dist/uptown.js lib/uptown.js",
     "test": "mocha --recursive"
   },
   "keywords": [
@@ -18,6 +20,7 @@
   "homepage": "https://github.com/smizell/uptown",
   "license": "MIT",
   "devDependencies": {
+    "browserify": "^14.5.0",
     "chai": "^3.0.0",
     "mocha": "^2.2.5"
   },
