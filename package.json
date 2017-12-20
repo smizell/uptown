@@ -5,7 +5,9 @@
   "main": "lib/uptown.js",
   "scripts": {
     "prepare": "npm run build",
-    "build": "browserify -d -s uptown -x lodash -o dist/uptown.js lib/uptown.js",
+    "build": "npm run build:full && npm run build:min",
+    "build:full": "browserify -d -s uptown -x lodash -o dist/uptown.js lib/uptown.js",
+    "build:min": "browserify -d -s uptown lib/uptown.js | uglifyjs > dist/uptown.min.js",
     "test": "mocha --recursive"
   },
   "keywords": [
@@ -22,7 +24,8 @@
   "devDependencies": {
     "browserify": "^14.5.0",
     "chai": "^3.0.0",
-    "mocha": "^2.2.5"
+    "mocha": "^2.2.5",
+    "uglify-js": "^3.2.2"
   },
   "dependencies": {
     "lodash": "^4.14.2"
