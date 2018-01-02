@@ -1,6 +1,6 @@
 {
   "name": "uptown",
-  "version": "0.4.1",
+  "version": "1.0.0",
   "description": "Simple ways to extend prototypes",
   "main": "lib/uptown.js",
   "scripts": {
