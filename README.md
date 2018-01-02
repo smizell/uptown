@@ -10,9 +10,20 @@ Simplify prototypical inheritance. This tries to provide some simple constructs 
 
 ## Install
 
+Using npm:
+
 ```sh
 npm install uptown --save
 ```
+
+Using cdn:
+
+```html
+<script src="https://unpkg.com/uptown/dist/uptown.min.js"></script>
+```
+
+- `dist/uptown.js` contains uptown and requires lodash to be loaded separately. Can be used with requirejs.
+- `dist/uptown.min.js` contains minified uptown and dependencies (lodash).
 
 ## Usage
 
@@ -20,7 +31,7 @@ Use `extendify` to add the extend method to a class (**note**: it mutates the or
 
 The `extend` class method takes three options arguments:
 
-1. Object of instance properites
+1. Object of instance properties
 1. Object of static methods and properties
 1. Object of getter and setter mutators
 
