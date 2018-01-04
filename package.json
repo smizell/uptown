@@ -21,6 +21,10 @@
   "author": "Stephen Mizell",
   "homepage": "https://github.com/smizell/uptown",
   "license": "MIT",
+  "files": [
+    "dist/uptown.js",
+    "dist/uptown.min.js"
+  ],
   "devDependencies": {
     "browserify": "^14.5.0",
     "chai": "^3.0.0",
