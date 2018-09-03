@@ -6,8 +6,8 @@
   "scripts": {
     "prepare": "npm run build",
     "build": "npm run build:full && npm run build:min",
-    "build:full": "browserify -d -s uptown -x lodash -o dist/uptown.js lib/uptown.js",
-    "build:min": "browserify -d -s uptown lib/uptown.js | uglifyjs > dist/uptown.min.js",
+    "build:full": "browserify -d -s uptown -o dist/uptown.js lib/uptown.js",
+    "build:min": "cat dist/uptown.js | uglifyjs > dist/uptown.min.js",
     "test": "mocha --recursive"
   },
   "keywords": [
